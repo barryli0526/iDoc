@@ -1,5 +1,5 @@
 <template>
-  <section class="app-main animated" :class="{slideInContent:!sidebar.opened, slideOutContent:sidebar.opened }">
+  <section class="app-main animated" :class="{slideInMain:!sidebar.opened, slideOutMain:sidebar.opened }">
     <div class="container is-fluid is-marginless app-content">
       <levelbar></levelbar>
       <transition

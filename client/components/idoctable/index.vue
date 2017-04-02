@@ -9,7 +9,7 @@
         <div class="idoc-table-body columns is-gapless"
              v-for="row in sourceData.body">
             <div class="idoc-table-col column"
-                 v-bind:class="{ isMergedUp: col.isMergedUp }"
+                 v-bind:class="{ isMergedUp: col.isMergedUp,missed: col.value==='Missed'  }"
                  v-for="col in row.cols">
                 <span v-html="col.value"
                       v-if="col.type !== 'img'"></span>
@@ -44,13 +44,14 @@ export default {
 .idoc-table {
     .idoc-table-header,
     .idoc-table-body {
-        font-family: serif;
+        // font-family: serif;
         font-size:12px;
         margin-bottom: 0 !important;
         .idoc-table-col.column {
             padding: 10px;
             border-top: 1px solid #ddd;
             border-right: 1px solid #ddd; // border-bottom: 1px solid #ddd;
+             text-align: center;
             &.isMergedUp {
                 border-top: none;
                 span{
@@ -66,6 +67,11 @@ export default {
             display: block;
             margin: 0 auto;
             width: 30px;
+        }      
+        .missed{
+            background-color:#FF9900;
+            color:#fff;
+            text-align: center;
         }
     }
 }

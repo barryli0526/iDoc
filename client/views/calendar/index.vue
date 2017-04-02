@@ -1,6 +1,7 @@
 <template>
   <div class="calendar">
-    <full-calendar :events="fcEvents" @dayClick="dayClick" locale="en"></full-calendar>
+    <!--<full-calendar :events="fcEvents" @dayClick="dayClick" locale="en"></full-calendar>-->
+    <img src="~assets/CalendarAll.png"/>
   </div>
 </template>
 

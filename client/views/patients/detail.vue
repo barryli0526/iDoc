@@ -5,9 +5,9 @@
                 <div class="tile is-child box">
                     <h1 class="title title-box">Profile of Patient</h1>
                     <div class="patient-info media">
-                        <div class="avatar media-left"><img src="~assets/avatar.png" /></div>
+                        <div class="avatar media-left"><img src="~assets/Patient_Jeremy.png" /></div>
                         <div class="info media-content">
-                            <h4>Jeremy Barket</h4>
+                            <h4>John Smith</h4>
                             <table class="table is-bordered info-table">
                                 <tbody>
                                     <tr>
@@ -51,17 +51,23 @@
                             </article>
                         </div>
                     </div>
-                    <div class="block is-flex">
+                    <div class="block patient-detail-info is-flex">
                         <tabs animation="slide"
                               :only-fade="false">
                             <!--<tab-pane label="Summary"
-                                          selected>Summary</tab-pane>-->
+                                                                                                                          selected>Summary</tab-pane>-->
                             <tab-pane label="Examination">
                                 <timeline>
                                     <timeline-item>
                                         <div class="item-box">
                                             <div class="item-date">2016-04-17</div>
-                                            <div class="item-content">In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble. While NASA has had many ups and downs, the launch and continued</div>
+                                            <div class="item-content">In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble. While NASA has had many ups and downs, the launch and continued
+                                                <div class="examination-box-wrapper">
+                                                    <div class="examination-box"></div>
+                                                    <div class="examination-box"></div>
+                                                    <div class="examination-box"></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </timeline-item>
                                     <timeline-item>
@@ -85,7 +91,7 @@
                                         <div class="blood-glucose">
                                             <div class="blood-glucose-detail">
                                                 <div class="food-header is-clearfix">
-                                                    <h1 class="is-pulled-left">Blood Glucose</h1>
+                                                    <!--<h1 class="is-pulled-left">Blood Glucose</h1>-->
                                                     <div class="tabs is-toggle is-pulled-right">
                                                         <ul>
                                                             <li>
@@ -114,6 +120,9 @@
                                             </div>
                                         </div>
                                     </collapse-item>
+                                    <collapse-item title="Blood Pressure">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                                    </collapse-item>
                                     <collapse-item title="Heart Rate">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                     </collapse-item>
@@ -130,25 +139,25 @@
                                         <IdocTable :sourceData="treatMentData">
                                         </IdocTable>
                                         <!--<timeline>
-                                                    <timeline-item>
-                                                        <div class="item-box">
-                                                            <div class="item-date">2016-04-17</div>
-                                                            <div class="item-content">In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble. While NASA has had many ups and downs, the launch and continued</div>
-                                                        </div>
-                                                    </timeline-item>
-                                                    <timeline-item>
-                                                        <div class="item-box">
-                                                            <div class="item-date">2016-04-17</div>
-                                                            <div class="item-content">In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble. While NASA has had many ups and downs, the launch and continued</div>
-                                                        </div>
-                                                    </timeline-item>
-                                                    <timeline-item>
-                                                        <div class="item-box">
-                                                            <div class="item-date">2016-04-17</div>
-                                                            <div class="item-content">In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble. While NASA has had many ups and downs, the launch and continued</div>
-                                                        </div>
-                                                    </timeline-item>
-                                                </timeline>-->
+                                                                                                                                    <timeline-item>
+                                                                                                                                        <div class="item-box">
+                                                                                                                                            <div class="item-date">2016-04-17</div>
+                                                                                                                                            <div class="item-content">In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble. While NASA has had many ups and downs, the launch and continued</div>
+                                                                                                                                        </div>
+                                                                                                                                    </timeline-item>
+                                                                                                                                    <timeline-item>
+                                                                                                                                        <div class="item-box">
+                                                                                                                                            <div class="item-date">2016-04-17</div>
+                                                                                                                                            <div class="item-content">In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble. While NASA has had many ups and downs, the launch and continued</div>
+                                                                                                                                        </div>
+                                                                                                                                    </timeline-item>
+                                                                                                                                    <timeline-item>
+                                                                                                                                        <div class="item-box">
+                                                                                                                                            <div class="item-date">2016-04-17</div>
+                                                                                                                                            <div class="item-content">In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble. While NASA has had many ups and downs, the launch and continued</div>
+                                                                                                                                        </div>
+                                                                                                                                    </timeline-item>
+                                                                                                                                </timeline>-->
                                     </div>
                                     <div class="plan">
                                         <h1>Treatment Plan</h1>
@@ -225,21 +234,25 @@
                                         <div class="activity-total">
                                             <div class="activity-total-item">
                                                 <h4>ACTIVE CALORIES</h4>
-                                                <p>1234</p>
+                                                <p>{{activity.total_cals}}</p>
                                             </div>
                                             <div class="activity-total-item">
                                                 <h4>TOTAL STEPS</h4>
-                                                <p>92345</p>
+                                                <p>{{activity.total_steps}}</p>
                                             </div>
                                             <div class="activity-total-item">
                                                 <h4>TOTAL DISTANCE</h4>
-                                                <p>15KM</p>
+                                                <p>{{activity.total_distance}}KM</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </tab-pane>
-                            <tab-pane label="Message">Message</tab-pane>
+                            <tab-pane label="Message">
+                                <div class="idoc-message">
+                                    <img src="~assets/message.png" />
+                                </div>
+                            </tab-pane>
                         </tabs>
                     </div>
                 </div>
@@ -255,6 +268,7 @@ import Chartist from 'vue-bulma-chartist'
 import Timeline from '../../components/timeline/timeline'
 import TimelineItem from '../../components/timeline/timeline-item'
 import IdocTable from '../../components/idoctable/index'
+let host = 'http://121.199.58.200:8989/api/';
 export default {
     components: {
         Tabs,
@@ -302,7 +316,7 @@ export default {
                 showArea: true
             },
             sourceData: {
-                header: [" ", "MON 6/15", "TUE 6/16", "WEB 6/17", "THU 6/18", "FRI 6/19", "SAT 6/20", "SUN 6/21"],
+                header: [" ", "03/31", "04/01", "04/02", "04/03", "04/04", "04/05", "04/06"],
                 body: [
                     {
                         cols: [
@@ -311,20 +325,20 @@ export default {
                                 type: "txt"
                             },
                             {
-                                value: require('../../assets/Food2.png'),
+                                value: require('../../assets/Food_banana.png'),
                                 type: "img"
                             },
                             {
-                                value: " ",
-                                type: "txt"
+                                value: require('../../assets/Food_carrot.png'),
+                                type: "img"
                             },
                             {
-                                value: " ",
-                                type: "txt"
+                                value: require('../../assets/Food_cherry.png'),
+                                type: "img"
                             },
                             {
-                                value: " ",
-                                type: "txt"
+                                value: require('../../assets/Food_carrot.png'),
+                                type: "img"
                             },
                             {
                                 value: " ",
@@ -350,16 +364,16 @@ export default {
                                 type: "img"
                             },
                             {
-                                value: " ",
-                                type: "txt"
+                                value: require('../../assets/Food2.png'),
+                                type: "img"
                             },
                             {
-                                value: " ",
-                                type: "txt"
+                                value: require('../../assets/Food2.png'),
+                                type: "img"
                             },
                             {
-                                value: " ",
-                                type: "txt"
+                                value: require('../../assets/Food2.png'),
+                                type: "img"
                             },
                             {
                                 value: " ",
@@ -381,20 +395,20 @@ export default {
                                 value: "DINNER"
                             },
                             {
-                                value: require('../../assets/Food2.png'),
+                                value: require('../../assets/Food_chicken.png'),
                                 type: "img"
                             },
                             {
-                                value: " ",
-                                type: "txt"
+                                value: require('../../assets/Food_chicken.png'),
+                                type: "img"
                             },
                             {
-                                value: " ",
-                                type: "txt"
+                                value: require('../../assets/Food_chicken.png'),
+                                type: "img"
                             },
                             {
-                                value: " ",
-                                type: "txt"
+                                value: require('../../assets/Food2.png'),
+                                type: "img"
                             },
                             {
                                 value: " ",
@@ -451,19 +465,19 @@ export default {
                                 value: "TOTAL"
                             },
                             {
-                                value: require('../../assets/Food2.png'),
-                                type: "img"
-                            },
-                            {
-                                value: " ",
+                                value: 100,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 80,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 88,
+                                type: "txt"
+                            },
+                            {
+                                value: 90,
                                 type: "txt"
                             },
                             {
@@ -483,7 +497,7 @@ export default {
                 ]
             },
             monitorData: {
-                header: [" ", " ", "TUE 6/16", "WEB 6/17", "THU 6/18", "FRI 6/19", "SAT 6/20", "SUN 6/21"],
+                header: [" ", " ", "03/31", "04/01", "04/02", "04/03", "04/04", "04/05"],
                 body: [
                     {
                         cols: [
@@ -738,7 +752,7 @@ export default {
                 ]
             },
             treatMentData: {
-                header: [" ", "6/15", "6/16", "6/17", "6/18", "6/19", "6/20", "6/21"],
+                header: [" ", "03/31", "04/01", "04/02", "04/03", "04/04", "04/05", "04/06"],
                 body: [
                     {
                         cols: [
@@ -747,31 +761,31 @@ export default {
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: "Missed",
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             }
                         ]
@@ -782,31 +796,31 @@ export default {
                                 value: "MEDICINE B"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             }
                         ]
@@ -817,31 +831,31 @@ export default {
                                 value: "MEDICINE C"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             }
                         ]
@@ -849,34 +863,34 @@ export default {
                     {
                         cols: [
                             {
-                                value: "SNACK"
+                                value: "INJECTION B"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             }
                         ]
@@ -887,56 +901,112 @@ export default {
                                 value: "TOTAL"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             },
                             {
-                                value: " ",
+                                value: 0,
                                 type: "txt"
                             }
                         ]
                     }
                 ]
             },
+            activity: {
+                total_cals: 0,
+                total_steps: 0,
+                total_distance: 0
+            }
         }
     },
 
     mounted() {
         this.loadActivity((response) => {
+            // console.log(response.data);           
+            this.activity = (response.data && response.data.length > 0) ? response.data[0] : {
+                total_cals: 0,
+                total_steps: 0,
+                total_distance: 0
+            };
+            console.log(this.activity);
+        });
+        this.loadFoods((response) => {
             console.log(response.data);
+            // this.activity  = response.data ? response.data[0] : {};            
+        });
+        this.loadTreatment((response) => {
+            var treatments = response.data;
+            if (treatments && treatments.length > 0) {
+                var startDate = moment(new Date(treatments[0].create_at)).format("MM/DD");
+                //build header
+                var arr = [" "];
+                for (let i = 0; i < 7; i++) {
+                    var date = moment(startDate).add(i, 'day').format("MM/DD");
+                    arr.push(date);
+                }
+                this.treatMentData.header = arr;
+                var rows = this.treatMentData.body;
+                var nameArr = [];
+                var mapTotal = {};
+                for (let i = 0; i < treatments.length && i < 7; i++) {
+                    var name = treatments[i].name;
+                    var date = moment(treatments[i].create_at).format("MM/DD");
+                    var idx = arr.indexOf(date);
+
+                    var rowNum = 0;
+                    switch (name.toLowerCase()) {
+                        case "medicine a":
+                            rowNum = 0;
+                            break;
+                        case "medicine b": rowNum = 1; break;
+                        case "medicine c": rowNum = 2; break;
+                        case "injection b": rowNum = 3; break;
+                    }
+                    if (!rows[rowNum].cols[idx].value)
+                        rows[rowNum].cols[idx].value = 0
+                    rows[rowNum].cols[idx].value += parseInt(treatments[i].amount);
+                    mapTotal[idx] = mapTotal[idx] ? mapTotal[idx] : 0;
+                    mapTotal[idx] += parseInt(treatments[i].amount);
+                }
+
+                for (var key in mapTotal) {
+                    rows[4].cols[key].value = mapTotal[key];
+                }
+                this.treatMentData.body = rows;
+            }
         });
     },
 
     methods: {
         loadActivity(cb) {
-            this.$http.get('http://localhost:3000/api/activity').then(cb);
+            this.$http.get(host + 'activity/latest').then(cb);
         },
 
         loadTreatment(cb) {
-
+            this.$http.get(host + 'treatment').then(cb);
         },
         loadFoods(cb) {
-
+            this.$http.get(host + 'food').then(cb);
         },
         loadMonitor(cb) {
 
@@ -957,6 +1027,16 @@ export default {
     .box {
         padding: 0 0 40px 0;
     }
+    .examination-box-wrapper {
+        display: flex;
+        margin-top: 20px;
+        .examination-box {
+            width: 80px;
+            height: 60px;
+            background: #979797;
+            margin-right: 30px;
+        }
+    }
     .title-box {
         margin-bottom: 50px;
         background-color: #F9F9F9;
@@ -972,8 +1052,7 @@ export default {
         margin-left: 20px;
         .avatar {
             img {
-                border-radius: 123px;
-                border: 1px solid black;
+                width: 160px;
             }
         }
         .info {
@@ -1033,8 +1112,7 @@ export default {
         padding: 0 10px 10px 10px;
         margin-bottom: 10px;
         h1 {
-            line-height: 37px;
-            font-family: serif;
+            line-height: 37px; // font-family: serif;
             font-weight: bold;
             font-size: 20px;
         }
@@ -1050,8 +1128,7 @@ export default {
         h1 {
             padding: 10px;
             border-bottom: 1px solid #ddd;
-            margin-bottom: 10px;
-            font-family: serif;
+            margin-bottom: 10px; // font-family: serif;
             font-weight: bold;
             font-size: 20px;
         }
@@ -1110,7 +1187,7 @@ export default {
             text-align: center;
             .food-total-item {
                 h4 {
-                    font-family: serif;
+                    // font-family: serif;
                     color: #666;
                 }
                 p {
@@ -1134,7 +1211,7 @@ export default {
                 text-align: center;
                 .activity-total-item {
                     h4 {
-                        font-family: serif;
+                        // font-family: serif;
                         color: #666;
                     }
                     p {
@@ -1158,6 +1235,27 @@ export default {
             width: 200px;
             margin-left: 40px;
             margin-top: 50px;
+        }
+    }
+    .tabs li.is-active a {
+        color: #00AAFF;
+        border-bottom-color: #00AAFF;
+        border-width: 2px;
+    }
+    .patient-detail-info {
+        .tab-content {
+            .tabs li.is-active a {
+                color: #00AAFF;
+                border: 1px solid #dbdbdb;
+                background-color: #eee;
+                color: #666;
+                font-weight: bold;
+            }
+        }
+    }
+    .idoc-message {
+        img {
+            margin-top: 30px;
         }
     }
 }

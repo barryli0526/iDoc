@@ -11,13 +11,13 @@
                                    @click="selectAll"
                                    :checked="isSelectAll">
                         </th>
+                        <th>Patient ID</th>
                         <th>Name</th>
                         <th>Gender</th>
-                        <th>Years</th>
+                        <th>Age</th>
                         <th>Disease</th>
-                        <th>ColumAAA</th>
-                        <th>ColumBBB</th>
-                        <th>Contact</th>
+                        <th>Treatment</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,17 +25,16 @@
                         v-for="patient in patients">
                         <input type="checkbox"
                                v-model="patient.checked">
+                        <td>{{patient.id}}</td>
                         <td>{{patient.name}}</td>
                         <td>{{patient.gender}}</td>
                         <td>{{patient.years}}</td>
                         <td>{{patient.disease}}</td>
-                        <td>{{patient.tel}}</td>
-                        <td>{{patient.description}}</td>
-                        <td>{{patient.description}}</td>
-    
+                        <td>{{patient.treatment}}</td>
+                        <td><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></td>                        
                     </tr>
                 </tbody>
-            </table>
+            </table>           
         </article>
     </div>
 </template>
@@ -47,32 +46,32 @@ export default {
         return {
             patients: [{
                 id: 1,
-                name: "Text1",
-                gender: "Text11",
-                years: "1",
-                disease: "Acanthamoeba Infection",
-                tel: "123",
-                description: "SSSSSSSSSSSSSS",
+                name: "John Smith",
+                gender: "Male",
+                years: "45",
+                disease: "Diabetes Type 2",
+                treatment: "51",
+                status: "SSSSSSSSSSSSSS",
                 checked: false
             },
             {
                 id: 2,
-                name: "Text2",
-                gender: "Text22",
-                years: "1",
-                disease: "Acanthamoeba Infection",
-                tel: "123",
-                description: "SSSSSSSSSSSSSS",
+                name: "Lauren Delgado",
+                gender: "Male",
+                years: "34",
+                disease: "Diabetes Type 2",
+                treatment: "60",
+                status: "SSSSSSSSSSSSSS",
                 checked: false
             },
             {
                 id: 3,
-                name: "Text3",
-                gender: "Text33",
-                years: "1",
+                name: "Kyle Barnett",
+                gender: "Female",
+                years: "50",
                 disease: "Acanthamoeba Infection",
-                tel: "123",
-                description: "SSSSSSSSSSSSSS",
+                treatment: "40",
+                status: "SSSSSSSSSSSSSS",
                 checked: false
             },
             {
@@ -81,8 +80,38 @@ export default {
                 gender: "Text44",
                 years: "1",
                 disease: "Acanthamoeba Infection",
-                tel: "123",
-                description: "SSSSSSSSSSSSSS",
+                treatment: "123",
+                status: "SSSSSSSSSSSSSS",
+                checked: false
+            },
+              {
+                id: 5,
+                name: "Text5",
+                gender: "Text44",
+                years: "1",
+                disease: "Acanthamoeba Infection",
+                treatment: "123",
+                status: "SSSSSSSSSSSSSS",
+                checked: false
+            },
+              {
+                id: 6,
+                name: "Text6",
+                gender: "Text44",
+                years: "1",
+                disease: "Acanthamoeba Infection",
+                treatment: "123",
+                status: "SSSSSSSSSSSSSS",
+                checked: false
+            },
+              {
+                id: 7,
+                name: "Text7",
+                gender: "Text44",
+                years: "1",
+                disease: "Acanthamoeba Infection",
+                treatment: "123",
+                status: "SSSSSSSSSSSSSS",
                 checked: false
             }
             ]
@@ -118,11 +147,15 @@ export default {
 }
 
 .patients {
-    font-family: serif;
+    // font-family: serif;
     table {
         tr {
             cursor: pointer;
         }
+    }
+    .fa-exclamation-triangle{
+        color:orange;
+        font-size:20px;
     }
     .title {
         color: #00AAFF;

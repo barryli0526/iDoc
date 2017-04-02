@@ -5,10 +5,11 @@
                 <article class="tile is-child box">
                     <h4 class="title">Reports</h4>
                     <div class="block">
-                        <chartist class="lines-bars"
-                                  :type="'Line'"
-                                  :data="lineAreaData"
-                                  :options="lineAreaOptions"></chartist>
+                        <!--<chartist class="lines-bars"
+                                              :type="'Line'"
+                                              :data="lineAreaData"
+                                              :options="lineAreaOptions"></chartist>-->
+                        <img src="~assets/home_report.png" />
                     </div>
                 </article>
             </div>
@@ -16,12 +17,16 @@
                 <article class="tile is-child box">
                     <h4 class="title">Patients</h4>
                     <ul class="patients-list">
-                        <li class="patient"><img src="~assets/avatar.png"><span>Virginia Gonzales</span></li>
-                        <li class="patient"><img src="~assets/avatar.png"><span>Victoria Watkins</span></li>
-                        <li class="patient"><img src="~assets/avatar.png"><span>Jose Morris</span></li>
-                        <li class="patient"><img src="~assets/avatar.png"><span>Lisa Burke</span></li>
-                        <li class="patient"><img src="~assets/avatar.png"><span>Paul Holmes</span></li>
-                    </ul>      
+                        <li class="patient" @click="goToPatientDetail(patient)"><img src="~assets/Patient_Jeremy.png"><span class="patient-name">John Smith</span><img class='disease'
+                                 src="~assets/disease.png"></li>
+                        <li class="patient"><img src="~assets/Patient1.png"><span class="patient-name">Virginia Gonzales</span></li>
+                        <li class="patient"><img src="~assets/Patient2.png"><span class="patient-name">Victoria Watkins</span></li>
+                        <li class="patient"><img src="~assets/Patient3.png"><span class="patient-name">Jose Morris</span></li>
+                        <li class="patient"><img src="~assets/Patient4.png"><span class="patient-name">Lisa Burke</span></li>
+                        <li class="patient"><img src="~assets/Patient5.png"><span class="patient-name">Paul Holmes</span></li>
+                        <li class="patient"><img src="~assets/Patient6.png"><span class="patient-name">Allen Holmes</span></li>
+                        <li class="patient"><img src="~assets/Patient7.png"><span class="patient-name">Paul Burk</span></li>
+                    </ul>
                 </article>
             </div>
         </div>
@@ -30,31 +35,32 @@
                 <article class="tile is-child box">
                     <h4 class="title">Task</h4>
                     <ul class="idoc-list">
-                        <li class="idoc-item"><span>Virginia Gonzales</span><span class="small-font">type 2 diabetic</span></li>
-                        <li class="idoc-item"><span>Victoria Watkins</span></li>
-                        <li class="idoc-item"><span>Jose Morris</span></li>
-                        <li class="idoc-item"><span>Lisa Burke</span></li>
-                        <li class="idoc-item"><span>Paul Holmes</span></li>
-                    </ul> 
+                        <li class="idoc-item"><span>Lorem ipsum dolor sit</span></li>
+                        <li class="idoc-item"><span>Lorem ipsum dolor sit</span></li>
+                        <li class="idoc-item"><span>Lorem ipsum dolor sit</span></li>
+                        <li class="idoc-item"><span>Lorem ipsum dolor sit</span></li>
+                        <li class="idoc-item"><span>Lorem ipsum dolor sit</span></li>
+                    </ul>
                 </article>
             </div>
             <div class="tile is-parent">
                 <article class="tile is-child box">
                     <h4 class="title">Message</h4>
-                    <ul class="idoc-list">
-                        <li class="idoc-item"><span>Virginia Gonzales</span><span class="small-font">type 2 diabetic</span></li>
-                        <li class="idoc-item"><span>Victoria Watkins</span></li>
-                        <li class="idoc-item"><span>Jose Morris</span></li>
-                        <li class="idoc-item"><span>Lisa Burke</span></li>
-                        <li class="idoc-item"><span>Paul Holmes</span></li>
-                    </ul> 
+                    <ul class="idoc-list home-message">
+                        <li class="idoc-item"><span>High morning blood test results.</span></li>
+                        <li class="idoc-item"><span>Snacks/Treats for T2 Diabetics ?</span></li>
+                        <li class="idoc-item"><span>Should I go on insulin injections?</span></li>
+                        <li class="idoc-item"><span>Any advice for improvement?</span></li>
+                        <li class="idoc-item"><span>Can a diabetic eat boiled eggs?</span></li>
+                    </ul>
                 </article>
             </div>
             <div class="tile is-parent">
-                 <article class="tile is-child box calendar">
+                <article class="tile is-child box calendar">
                     <h1 class="title">Calendar</h1>
                     <p class="control">
-                        <datepicker placeholder="Pick date and time" :config="{ inline: true }"></datepicker>
+                        <datepicker placeholder="Pick date and time"
+                                    :config="{ inline: true }"></datepicker>
                     </p>
                 </article>
             </div>
@@ -111,6 +117,11 @@ export default {
     },
 
     mounted() {
+    },
+   methods: {       
+        goToPatientDetail: function () {
+            this.$router.push({ name: 'Detail', params: { userId: 1 } })
+        }
     }
 }
 </script>
@@ -130,54 +141,76 @@ export default {
     .ct-series-a .ct-slice-donut {
         stroke: #15ACFF;
     }
-    .patients{
-        img{
-            width:30px;
+    .patients {
+        img {
+            width: 30px;
             height: 30px;
         }
-        .patients-list{           
-            .patient{
-                display: flex;                            
-                padding :10px;
+        .patients-list {
+            .patient {
+                display: flex;
+                padding: 10px;
                 border-bottom: 1px solid #DEE1E2;
-                span{
-                    margin-left:30px;
-                    line-height:30px;
-                    color:#666;
+                span {
+                    margin-left: 30px;
+                    line-height: 30px;
+                    color: #666;
                 }
-                &:hover{
+                &:hover {
                     cursor: pointer;
                 }
             }
-        }       
+        }
+        img.disease {
+            width: 20px;
+            height: 20px;
+            align-self: center;
+        }
     }
-    .idoc-list{
-        .idoc-item{
-            display: flex;                            
-            padding :10px;
+    .idoc-list {
+        .idoc-item {
+            display: flex;
+            padding: 10px;
             border-bottom: 1px solid #DEE1E2;
-            span{                
-                line-height:30px;
-                color:#666;
+            span {
+                line-height: 30px;
+                color: #666;
             }
-            &:hover{
+            &:hover {
                 cursor: pointer;
             }
-            .small-font{
-                margin-left:10px;
-                color:#d3d3d3;
+            .small-font {
+                margin-left: 10px;
+                color: #d3d3d3;
             }
         }
-    } 
-    .calendar{
-        .flatpickr-input{
+    }
+    .patient-name {
+        flex-grow: 1;
+    } // .home-message {
+    //     .idoc-item {
+    //         padding-left:0;
+    //         padding-right:0;
+    //         span {
+    //             font-size: 13px;
+    //             line-height: 13px;
+    //         }
+    //         span.time {
+    //             font-size: 11px;
+    //         }
+    //     }
+    // }
+    .calendar {
+        .flatpickr-input {
             display: none;
         }
-        .flatpickr-calendar.inline:before,.flatpickr-calendar.inline:after{
+        .flatpickr-calendar.inline:before,
+        .flatpickr-calendar.inline:after {
             display: none
         }
-        .flatpickr-days,.flatpickr-calendar{
-            width:auto;
+        .flatpickr-days,
+        .flatpickr-calendar {
+            width: auto;
         }
     }
 }

@@ -29,9 +29,9 @@ const state = {
       meta: {
         icon: 'fa-rocket',
         img : require('assets/statistic.png'),
-        link: 'patients/index.vue'
+        link: 'report/index.vue'
       },
-      component: lazyLoading('patients', true)
+      component: lazyLoading('report', true)
     },
     {
       name: 'Calendar',
@@ -49,9 +49,9 @@ const state = {
       meta: {
         icon: 'fa-rocket',
         img : require('assets/setting.png'),
-        link: 'patients/index.vue'
+        link: 'setting/index.vue'
       },
-      component: lazyLoading('patients', true)
+      component: lazyLoading('setting', true)
     }
   ]
 }
